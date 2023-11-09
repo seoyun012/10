@@ -6,10 +6,25 @@
 
 int main(int argc, char *argv[]) {
 	
-	char src[30] = "happy C programming";
+	FILE* fp;
+	char str[100];
+	int i;
 	
-	printf("문자열 \"%s\"의 길이 : %i\n", src, strlen(src) );
+	//1. open file
+	fp = fopen("sample.txt","W");
 	
+	//2. write file
+	for (i=0; i<3; i++){
+	
+	//2-1. print "input a word"
+	printf("input a word:");
+	//2-2. scanf a string
+	scanf("%s", str);
+	//2-3. fprintf()
+	fprintf(fp, "%s\n", str);
+}
+	//3. close file
+	fclose(fp);
 	
 	return 0;
 }
